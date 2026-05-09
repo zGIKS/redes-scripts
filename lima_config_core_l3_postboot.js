@@ -20,7 +20,7 @@ configureIosDevice("SW2_LIMA", "enable\nconfigure terminal\nhostname SW2_LIMA\nn
 
 configureIosDevice("SW3_LIMA", "enable\nconfigure terminal\nhostname SW3_LIMA\nno ip domain-lookup\nvlan 10\nname ADMINISTRACION\nexit\nvlan 20\nname LOGISTICA\nexit\nvlan 30\nname VENTAS\nexit\nvlan 40\nname FINANZAS\nexit\nvlan 50\nname MARKETING\nexit\nvlan 60\nname SERVIDORES\nexit\nvlan 70\nname WIFI_CLIENTES\nexit\nvlan 80\nname WIFI_EJECUTIVOS\nexit\nvlan 99\nname NATIVA\nexit\ninterface range GigabitEthernet0/1 - 2\nswitchport mode trunk\nswitchport trunk allowed vlan all\nno shutdown\nexit\ninterface FastEthernet0/1\nswitchport mode access\nswitchport access vlan 20\nspanning-tree portfast\nno shutdown\nexit\ninterface FastEthernet0/2\nswitchport mode access\nswitchport access vlan 50\nspanning-tree portfast\nno shutdown\nexit\ninterface FastEthernet0/3\nswitchport mode access\nswitchport access vlan 40\nspanning-tree portfast\nno shutdown\nexit\nend");
 
-configureIosDevice("ROUTER_LIMA", "enable\nconfigure terminal\nhostname ROUTER_LIMA\nno ip domain-lookup\ninterface FastEthernet0/0\ndescription Enlace L3 a MS1_CORE_LIMA\nip address 10.192.43.1 255.255.255.252\nno shutdown\nexit\nip route 10.192.40.0 255.255.252.0 10.192.43.2\nend");
+configureIosDevice("ROUTER_LIMA", "enable\nconfigure terminal\nhostname ROUTER_LIMA\nno ip domain-lookup\ninterface GigabitEthernet0/0\ndescription Enlace L3 a MS1_CORE_LIMA\nip address 10.192.43.1 255.255.255.252\nno shutdown\nexit\nip route 10.192.40.0 255.255.252.0 10.192.43.2\nend");
 
 configurePcIp("PC_VENTAS_1", false, "10.192.40.10", "255.255.255.0", "10.192.40.1", "10.192.42.195");
 configurePcIp("PC_VENTAS_2", false, "10.192.40.11", "255.255.255.0", "10.192.40.1", "10.192.42.195");
@@ -28,8 +28,22 @@ configurePcIp("PC_LOGISTICA", false, "10.192.42.66", "255.255.255.192", "10.192.
 configurePcIp("PC_MARKETING", false, "10.192.42.10", "255.255.255.192", "10.192.42.1", "10.192.42.195");
 configurePcIp("PC_FINANZAS", false, "10.192.41.130", "255.255.255.192", "10.192.41.129", "10.192.42.195");
 
-configurePcIp("WEB_LIMA", false, "10.192.42.194", "255.255.255.240", "10.192.42.193", "10.192.42.195");
-configurePcIp("DNS_LIMA", false, "10.192.42.195", "255.255.255.240", "10.192.42.193", "10.192.42.195");
-configurePcIp("DHCP_LIMA", false, "10.192.42.196", "255.255.255.240", "10.192.42.193", "10.192.42.195");
-configurePcIp("FTP_LIMA", false, "10.192.42.197", "255.255.255.240", "10.192.42.193", "10.192.42.195");
-configurePcIp("MAIL_LIMA", false, "10.192.42.198", "255.255.255.240", "10.192.42.193", "10.192.42.195");
+ipc.network().getDevice("WEB_LIMA").getPort("GigabitEthernet0").setIpSubnetMask("10.192.42.194", "255.255.255.240");
+ipc.network().getDevice("WEB_LIMA").getPort("GigabitEthernet0").setDefaultGateway("10.192.42.193");
+ipc.network().getDevice("WEB_LIMA").getPort("GigabitEthernet0").setDnsServerIp("10.192.42.195");
+
+ipc.network().getDevice("DNS_LIMA").getPort("GigabitEthernet0").setIpSubnetMask("10.192.42.195", "255.255.255.240");
+ipc.network().getDevice("DNS_LIMA").getPort("GigabitEthernet0").setDefaultGateway("10.192.42.193");
+ipc.network().getDevice("DNS_LIMA").getPort("GigabitEthernet0").setDnsServerIp("10.192.42.195");
+
+ipc.network().getDevice("DHCP_LIMA").getPort("GigabitEthernet0").setIpSubnetMask("10.192.42.196", "255.255.255.240");
+ipc.network().getDevice("DHCP_LIMA").getPort("GigabitEthernet0").setDefaultGateway("10.192.42.193");
+ipc.network().getDevice("DHCP_LIMA").getPort("GigabitEthernet0").setDnsServerIp("10.192.42.195");
+
+ipc.network().getDevice("FTP_LIMA").getPort("GigabitEthernet0").setIpSubnetMask("10.192.42.197", "255.255.255.240");
+ipc.network().getDevice("FTP_LIMA").getPort("GigabitEthernet0").setDefaultGateway("10.192.42.193");
+ipc.network().getDevice("FTP_LIMA").getPort("GigabitEthernet0").setDnsServerIp("10.192.42.195");
+
+ipc.network().getDevice("MAIL_LIMA").getPort("GigabitEthernet0").setIpSubnetMask("10.192.42.198", "255.255.255.240");
+ipc.network().getDevice("MAIL_LIMA").getPort("GigabitEthernet0").setDefaultGateway("10.192.42.193");
+ipc.network().getDevice("MAIL_LIMA").getPort("GigabitEthernet0").setDnsServerIp("10.192.42.195");

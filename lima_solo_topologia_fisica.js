@@ -3,7 +3,7 @@
 // No configura VLANs, trunks, IPs ni router.
 // Despues de cargarla, esperar que todos los equipos terminen de bootear.
 
-addDevice("ROUTER_LIMA", "2811", 650, 50);
+addDevice("ROUTER_LIMA", "2911", 650, 50);
 
 addDevice("MS1_CORE_LIMA", "3650-24PS", 650, 170);
 addDevice("MS2_WIFI_LIMA", "3650-24PS", 260, 320);
@@ -32,7 +32,7 @@ addDevice("FTP_LIMA", "Server-PT", 1280, 370);
 addDevice("MAIL_LIMA", "Server-PT", 1170, 450);
 
 // Router a primer multilayer: cobre normal.
-addLink("ROUTER_LIMA", "FastEthernet0/0", "MS1_CORE_LIMA", "GigabitEthernet1/0/1", "straight");
+addLink("ROUTER_LIMA", "GigabitEthernet0/0", "MS1_CORE_LIMA", "GigabitEthernet1/0/1", "straight");
 
 // MS1 a MS2/MS3/MS4: Copper Cross-Over.
 addLink("MS1_CORE_LIMA", "GigabitEthernet1/0/2", "MS2_WIFI_LIMA", "GigabitEthernet1/0/1", "cross");
@@ -60,9 +60,5 @@ addLink("SW3_LIMA", "FastEthernet0/1", "PC_LOGISTICA", "FastEthernet0", "straigh
 addLink("SW3_LIMA", "FastEthernet0/2", "PC_MARKETING", "FastEthernet0", "straight");
 addLink("SW3_LIMA", "FastEthernet0/3", "PC_FINANZAS", "FastEthernet0", "straight");
 
-// Servidores: cobre normal.
-addLink("MS3_DIST_LIMA", "GigabitEthernet1/0/10", "WEB_LIMA", "FastEthernet0", "straight");
-addLink("MS3_DIST_LIMA", "GigabitEthernet1/0/11", "DNS_LIMA", "FastEthernet0", "straight");
-addLink("MS4_DIST_LIMA", "GigabitEthernet1/0/10", "DHCP_LIMA", "FastEthernet0", "straight");
-addLink("MS4_DIST_LIMA", "GigabitEthernet1/0/11", "FTP_LIMA", "FastEthernet0", "straight");
-addLink("MS4_DIST_LIMA", "GigabitEthernet1/0/12", "MAIL_LIMA", "FastEthernet0", "straight");
+// Servidores: agregar modulo PT-HOST-NM-1CGE y cables Gigabit manualmente.
+// Ver servidores-gig.MD.
