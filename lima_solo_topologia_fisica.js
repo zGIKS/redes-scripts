@@ -24,6 +24,7 @@ addDevice("PC_VENTAS_2", "PC-PT", 650, 660);
 addDevice("PC_LOGISTICA", "PC-PT", 810, 660);
 addDevice("PC_MARKETING", "PC-PT", 930, 660);
 addDevice("PC_FINANZAS", "PC-PT", 1050, 660);
+addDevice("PC_ADMIN", "PC-PT", 1170, 660);
 
 addDevice("WEB_LIMA", "Server-PT", 1170, 170);
 addDevice("DNS_LIMA", "Server-PT", 1280, 220);
@@ -59,6 +60,7 @@ addLink("SW2_LIMA", "FastEthernet0/1", "PC_VENTAS_2", "FastEthernet0", "straight
 addLink("SW3_LIMA", "FastEthernet0/1", "PC_LOGISTICA", "FastEthernet0", "straight");
 addLink("SW3_LIMA", "FastEthernet0/2", "PC_MARKETING", "FastEthernet0", "straight");
 addLink("SW3_LIMA", "FastEthernet0/3", "PC_FINANZAS", "FastEthernet0", "straight");
+addLink("SW3_LIMA", "FastEthernet0/4", "PC_ADMIN", "FastEthernet0", "straight");
 
 // Servidores: agregar modulo PT-HOST-NM-1CGE y cables Gigabit manualmente.
 // Ver servidores-gig.MD.
