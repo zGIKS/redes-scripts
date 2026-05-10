@@ -21,6 +21,8 @@ addDevice("WIFI_LAPTOP_EJECUTIVO", "Laptop-PT", 40, 660);
 
 addDevice("PC_VENTAS_1", "PC-PT", 430, 660);
 addDevice("PC_VENTAS_2", "PC-PT", 650, 660);
+addDevice("PC_VENTAS_3", "PC-PT", 540, 660);
+addDevice("PC_ADMINISTRACION", "PC-PT", 320, 660);
 addDevice("PC_LOGISTICA", "PC-PT", 810, 660);
 addDevice("PC_MARKETING", "PC-PT", 930, 660);
 addDevice("PC_FINANZAS", "PC-PT", 1050, 660);
@@ -56,7 +58,9 @@ addLink("MS4_DIST_LIMA", "GigabitEthernet1/0/4", "SW3_LIMA", "GigabitEthernet0/2
 
 // PCs: cobre normal.
 addLink("SW1_LIMA", "FastEthernet0/1", "PC_VENTAS_1", "FastEthernet0", "straight");
+addLink("SW1_LIMA", "FastEthernet0/2", "PC_ADMINISTRACION", "FastEthernet0", "straight");
 addLink("SW2_LIMA", "FastEthernet0/1", "PC_VENTAS_2", "FastEthernet0", "straight");
+addLink("SW2_LIMA", "FastEthernet0/2", "PC_VENTAS_3", "FastEthernet0", "straight");
 addLink("SW3_LIMA", "FastEthernet0/1", "PC_LOGISTICA", "FastEthernet0", "straight");
 addLink("SW3_LIMA", "FastEthernet0/2", "PC_MARKETING", "FastEthernet0", "straight");
 addLink("SW3_LIMA", "FastEthernet0/3", "PC_FINANZAS", "FastEthernet0", "straight");
