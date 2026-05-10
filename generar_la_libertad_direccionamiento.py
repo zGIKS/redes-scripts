@@ -16,8 +16,8 @@ UNIDADES = [
     ("Marketing", 10, "VLMAR", 34),
     ("Logistica", 9, "VLLOG", 35),
     ("WiFi Clientes", 6, "VLWFCLI", 36),
-    ("Nativa/Gestion", 5, "VLNAT", 99),
-    ("Servidores", 4, "VLSER", 37),
+    ("Nativa/Gestion", 2, "VLNAT", 99),
+    ("Servidores", 2, "VLSER", 37),
 ]
 
 
