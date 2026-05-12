@@ -177,6 +177,78 @@ La infraestructura de red actual ha crecido sin planificación estandarizada dur
 
 ## 2.4 Identificación de las unidades organizaciones (VLAN)
 
+Las VLAN se definieron por sede de acuerdo con las unidades organizacionales, las redes WiFi, la red de servidores y la red nativa/de gestión. La VLAN Nativa/Gestión se mantiene con el ID 99 para identificar el segmento usado por la PC-ADMIN y la administración de dispositivos de red.
+
+### 2.4.1 Sede Principal Lima
+
+| Unidad organizacional | Nombre VLAN | VLAN ID |
+| --- | --- | ---: |
+| Ventas | VLVEN | 10 |
+| Administración | VLADM | 11 |
+| Finanzas | VLFIN | 12 |
+| WiFi Ejecutivos | VLWFEJE | 13 |
+| Marketing | VLMAR | 14 |
+| Logística | VLLOG | 15 |
+| WiFi Clientes | VLWFCLI | 16 |
+| Servidores | VLSER | 17 |
+| Nativa/Gestión | VLNAT | 99 |
+
+### 2.4.2 Sede Sucursal Ica
+
+| Unidad organizacional | Nombre VLAN | VLAN ID |
+| --- | --- | ---: |
+| Ventas | VLVEN | 20 |
+| Administración | VLADM | 21 |
+| Finanzas | VLFIN | 22 |
+| WiFi Ejecutivos | VLWFEJE | 23 |
+| Marketing | VLMAR | 24 |
+| Logística | VLLOG | 25 |
+| WiFi Clientes | VLWFCLI | 26 |
+| Servidores | VLSER | 27 |
+| Nativa/Gestión | VLNAT | 99 |
+
+### 2.4.3 Sede Sucursal La Libertad
+
+| Unidad organizacional | Nombre VLAN | VLAN ID |
+| --- | --- | ---: |
+| Ventas | VLVEN | 30 |
+| Administración | VLADM | 31 |
+| Finanzas | VLFIN | 32 |
+| WiFi Ejecutivos | VLWFEJE | 33 |
+| Marketing | VLMAR | 34 |
+| Logística | VLLOG | 35 |
+| WiFi Clientes | VLWFCLI | 36 |
+| Servidores | VLSER | 37 |
+| Nativa/Gestión | VLNAT | 99 |
+
+### 2.4.4 Sede Sucursal Puno
+
+| Unidad organizacional | Nombre VLAN | VLAN ID |
+| --- | --- | ---: |
+| Administración | VLADM | 10 |
+| Logística | VLLOG | 20 |
+| Ventas | VLVEN | 30 |
+| Finanzas | VLFIN | 40 |
+| Marketing | VLMAR | 50 |
+| Servidores | VLSER | 60 |
+| WiFi Clientes | VLWFCLI | 70 |
+| WiFi Ejecutivos | VLWFEJE | 80 |
+| Nativa/Gestión | VLNAT | 99 |
+
+### 2.4.5 Sede Sucursal Huánuco
+
+| Unidad organizacional | Nombre VLAN | VLAN ID |
+| --- | --- | ---: |
+| Ventas | VLVEN | 40 |
+| Administración | VLADM | 41 |
+| Finanzas | VLFIN | 42 |
+| WiFi Ejecutivos | VLWFEJE | 43 |
+| Marketing | VLMAR | 44 |
+| Logística | VLLOG | 45 |
+| WiFi Clientes | VLWFCLI | 46 |
+| Servidores | VLSER | 47 |
+| Nativa/Gestión | VLNAT | 99 |
+
 # Capítulo 3: Implementación de la solución
 
 ## 3.1 Implementación del direccionamiento IP

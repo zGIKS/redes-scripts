@@ -17,15 +17,15 @@ SALIDA = Path("LIMA-ESQUEMA-DIRECCIONAMIENTO-IA.xlsx")
 # Nativa depende de la cantidad de equipos de red; se asume 15
 # dispositivos actuales para routers, switches, AP/firewall y crecimiento.
 UNIDADES = [
-    ("Ventas", 198, "VLVEN", 30),
-    ("Administracion", 100, "VLADM", 10),
-    ("Finanzas", 41, "VLFIN", 40),
-    ("WiFi Ejecutivos", 31, "VLWFEJE", 80),
-    ("Marketing", 29, "VLMAR", 50),
-    ("Logistica", 25, "VLLOG", 20),
-    ("WiFi Clientes", 18, "VLWFCLI", 70),
+    ("Ventas", 198, "VLVEN", 10),
+    ("Administracion", 100, "VLADM", 11),
+    ("Finanzas", 41, "VLFIN", 12),
+    ("WiFi Ejecutivos", 31, "VLWFEJE", 13),
+    ("Marketing", 29, "VLMAR", 14),
+    ("Logistica", 25, "VLLOG", 15),
+    ("WiFi Clientes", 18, "VLWFCLI", 16),
     ("Nativa", 15, "VLNAT", 99),
-    ("Servidores", 10, "VLSER", 60),
+    ("Servidores", 10, "VLSER", 17),
 ]
 
 ORDEN_PLANTILLA = [
