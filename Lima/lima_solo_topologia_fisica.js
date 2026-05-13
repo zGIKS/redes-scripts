@@ -58,13 +58,13 @@ addLink("MS4_DIST_LIMA", "GigabitEthernet1/0/4", "SW3_LIMA", "GigabitEthernet0/2
 
 // PCs: cobre normal.
 addLink("SW1_LIMA", "FastEthernet0/1", "PC_VENTAS_1", "FastEthernet0", "straight");
-addLink("SW1_LIMA", "FastEthernet0/2", "PC_ADMINISTRACION", "FastEthernet0", "straight");
+addLink("SW1_LIMA", "FastEthernet0/4", "PC_ADMINISTRACION", "FastEthernet0", "straight");
 addLink("SW2_LIMA", "FastEthernet0/1", "PC_VENTAS_2", "FastEthernet0", "straight");
 addLink("SW2_LIMA", "FastEthernet0/2", "PC_VENTAS_3", "FastEthernet0", "straight");
-addLink("SW3_LIMA", "FastEthernet0/1", "PC_LOGISTICA", "FastEthernet0", "straight");
-addLink("SW3_LIMA", "FastEthernet0/2", "PC_MARKETING", "FastEthernet0", "straight");
-addLink("SW3_LIMA", "FastEthernet0/3", "PC_FINANZAS", "FastEthernet0", "straight");
-addLink("SW3_LIMA", "FastEthernet0/4", "PC_ADMIN", "FastEthernet0", "straight");
+addLink("SW3_LIMA", "FastEthernet0/20", "PC_LOGISTICA", "FastEthernet0", "straight");
+addLink("SW3_LIMA", "FastEthernet0/16", "PC_MARKETING", "FastEthernet0", "straight");
+addLink("SW3_LIMA", "FastEthernet0/8", "PC_FINANZAS", "FastEthernet0", "straight");
+addLink("SW3_LIMA", "FastEthernet0/24", "PC_ADMIN", "FastEthernet0", "straight");
 
 // Servidores: agregar modulo PT-HOST-NM-1CGE y cables Gigabit manualmente.
 // Ver servidores-gig.MD.
