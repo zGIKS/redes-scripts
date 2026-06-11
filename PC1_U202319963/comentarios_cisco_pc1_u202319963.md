@@ -1,0 +1,55 @@
+PCs cableadas
+
+LAN 1
+Hosts requeridos: 58
+Red: 10.50.80.0/26
+PC0_U202319963: 10.50.80.2/26
+Gateway: 10.50.80.1
+Mascara: 255.255.255.192
+
+LAN 2
+Hosts requeridos: 5
+Red: 10.50.80.80/29
+PC1_U202319963: 10.50.80.82/29
+Gateway: 10.50.80.81
+Mascara: 255.255.255.248
+
+LAN 3
+Hosts requeridos: 12
+Red: 10.50.80.64/28
+PC2_U202319963: 10.50.80.66/28
+Gateway: 10.50.80.65
+Mascara: 255.255.255.240
+
+LAN 4
+Hosts requeridos: 4
+Red: 10.50.80.88/29
+PC3_U202319963: 10.50.80.90/29
+Gateway: 10.50.80.89
+Mascara: 255.255.255.248
+
+Routers
+
+R1_U202319963
+Gi0/0 LAN 1: 10.50.80.1/26
+Gi0/1 LAN 2: 10.50.80.81/29
+Se0/0/0 WAN: 10.50.80.97/30
+
+R2_U202319963
+Gi0/0 LAN 3: 10.50.80.65/28
+Gi0/1 LAN 4: 10.50.80.89/29
+Se0/0/0 WAN: 10.50.80.98/30
+
+WAN
+
+Hosts requeridos: 2
+Red: 10.50.80.96/30
+R1_U202319963: 10.50.80.97/30
+R2_U202319963: 10.50.80.98/30
+Broadcast: 10.50.80.99
+
+Enrutamiento
+
+RIP v2
+network 10.0.0.0
+no auto-summary
