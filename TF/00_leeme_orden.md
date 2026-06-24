@@ -3,6 +3,7 @@
 1. Ejecuta primero los scripts LAN ya existentes por sede.
 2. Ejecuta `01_wan_postboot.js` para agregar los enlaces WAN seriales y las rutas.
 3. Ejecuta `02_seguridad_postboot.js` para SSH, hardening y ACLs.
+4. Ejecuta `03_internet_topologia.js` para agregar la conectividad de Internet entre `ISP1`, `ISP2` e `ISP3`.
 
 ## Supuestos usados
 
