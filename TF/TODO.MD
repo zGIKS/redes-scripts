@@ -1,6 +1,7 @@
 * [x] Falta PPP PAP/CHAP en los enlaces WAN. El caso lo pide explícitamente, pero en scripts solo hay serial + IP + clock rate; no se evidenció `encapsulation ppp`, `ppp authentication chap/pap`, usuarios ni passwords.
 
 * [ ] Falta configurar servicios reales por script: FTP, HTTP, DNS, DHCP, SMTP y POP3. Los scripts asignan IP a servidores, pero no activan ni completan los servicios.
+  Nota: Packet Tracer no esta aplicando la configuracion interna de servicios Server-PT por script. Se debe completar/validar manualmente en `Server > Services` usando la carpeta `TF/04-servicios-manuales/`.
 
 * [ ] FTP está incompleto: faltan usuarios, passwords y permisos por sede en script. En anexos hay capturas, pero no queda automatizado.
 
