@@ -1,26 +1,35 @@
 # Servicios manuales Server-PT
 
-Packet Tracer no esta aplicando por script la configuracion interna de `Services` en los servidores. Usa estos archivos para completar a mano:
+En Packet Tracer los servicios internos de `Server-PT` se completan mejor a mano en `Services`.
 
-1. `01_lima.md`
-2. `02_la_libertad.md`
-3. `03_ica.md`
-4. `04_huanuco.md`
-5. `05_puno.md`
-6. `06_isp.md`
+Diseno simplificado y defendible:
 
-Orden recomendado por sede:
+- DNS corporativo centralizado: solo `DNS_LIMA` resuelve nombres de todas las sedes.
+- DHCP local por sede: solo para redes WiFi Clientes y WiFi Ejecutivos.
+- PCs cableadas: mantienen IP estatica segun los scripts/tablas.
+- WEB/FTP/MAIL: se activa por sede en su servidor local.
 
-1. Verificar `Desktop > IP Configuration` del servidor.
-2. Activar `HTTP`, `DNS`, `DHCP`, `FTP` o `EMAIL` segun corresponda.
-3. Cargar registros DNS.
-4. Cargar pools DHCP.
-5. Cargar usuarios FTP.
-6. Cargar usuarios de correo.
-7. Probar desde una PC: ping, web por IP, web por nombre, FTP, DHCP y correo.
+Archivos:
 
-Regla rapida:
+1. `01_lima.md`: DNS corporativo, DHCP WiFi Lima, WEB/FTP/MAIL Lima.
+2. `02_la_libertad.md`: DHCP WiFi, WEB/FTP/MAIL La Libertad.
+3. `03_ica.md`: DHCP WiFi, WEB/FTP/MAIL Ica.
+4. `04_huanuco.md`: DHCP WiFi, WEB/FTP/MAIL Huanuco.
+5. `05_puno.md`: DHCP WiFi, WEB/FTP/MAIL Puno.
+6. `06_isp.md`: DNS/WEB ISP.
 
-- Si abre por IP pero no por nombre, falta DNS o la PC tiene DNS mal.
-- Si DHCP no entrega IP, revisa el pool y que el router tenga `ip helper-address` hacia el servidor DHCP local.
-- Si FTP abre pero no acepta usuarios, faltan usuarios/permisos.
+Importante:
+
+- Toda PC que pruebe paginas por nombre debe usar DNS `10.192.42.163`.
+- Los pools DHCP WiFi de todas las sedes entregan DNS `10.192.42.163`.
+- Si una PC cableada tiene DNS local antiguo, cambialo manualmente a `10.192.42.163` para las pruebas de nombres.
+
+Prueba base desde cualquier sede:
+
+```text
+nslookup www.lima.com
+nslookup www.la-libertad.com
+nslookup www.ica.com
+nslookup www.huanuco.com
+nslookup www.puno.com
+```

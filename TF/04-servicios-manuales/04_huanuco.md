@@ -2,45 +2,34 @@
 
 ## IP de servidores
 
-| Servidor | IP | Mascara | Gateway | DNS |
+| Servidor | IP | Mascara | Gateway | DNS recomendado |
 | --- | --- | --- | --- | --- |
-| WEB_HUANUCO | 10.192.52.178 | 255.255.255.240 | 10.192.52.177 | 10.192.52.179 |
-| DNS_HUANUCO | 10.192.52.179 | 255.255.255.240 | 10.192.52.177 | 10.192.52.179 |
-| DHCP_HUANUCO | 10.192.52.180 | 255.255.255.240 | 10.192.52.177 | 10.192.52.179 |
-| FTP_HUANUCO | 10.192.52.181 | 255.255.255.240 | 10.192.52.177 | 10.192.52.179 |
-| MAIL_HUANUCO | 10.192.52.182 | 255.255.255.240 | 10.192.52.177 | 10.192.52.179 |
+| WEB_HUANUCO | 10.192.52.178 | 255.255.255.240 | 10.192.52.177 | 10.192.42.163 |
+| DHCP_HUANUCO | 10.192.52.180 | 255.255.255.240 | 10.192.52.177 | 10.192.42.163 |
+| FTP_HUANUCO | 10.192.52.181 | 255.255.255.240 | 10.192.52.177 | 10.192.42.163 |
+| MAIL_HUANUCO | 10.192.52.182 | 255.255.255.240 | 10.192.52.177 | 10.192.42.163 |
+
+No configures `DNS_HUANUCO` salvo que el profesor pida DNS local. Para pruebas usa DNS corporativo Lima: `10.192.42.163`.
 
 ## HTTP
 
 `WEB_HUANUCO > Services > HTTP`: `On`
 
-## DNS
+Prueba:
 
-`DNS_HUANUCO > Services > DNS`: `On`
+```text
+http://10.192.52.178
+http://www.huanuco.com
+```
 
-| Name | Address |
-| --- | --- |
-| www.huanuco.com | 10.192.52.178 |
-| ftp.huanuco.com | 10.192.52.181 |
-| mail.huanuco.com | 10.192.52.182 |
-| www.lima.com | 10.192.42.162 |
-| ftp.lima.com | 10.192.42.165 |
-| www.miempresa.com | 10.192.42.162 |
-| mail.miempresa.com | 10.192.42.166 |
-
-## DHCP
+## DHCP solo WiFi
 
 `DHCP_HUANUCO > Services > DHCP`: `On`
 
 | Pool Name | Default Gateway | DNS Server | Start IP Address | Subnet Mask | Max Users |
 | --- | --- | --- | --- | --- | --- |
-| HUANUCO_VENTAS | 10.192.52.1 | 10.192.52.179 | 10.192.52.15 | 255.255.255.224 | 15 |
-| HUANUCO_ADMIN | 10.192.52.33 | 10.192.52.179 | 10.192.52.45 | 255.255.255.224 | 15 |
-| HUANUCO_FINANZAS | 10.192.52.65 | 10.192.52.179 | 10.192.52.70 | 255.255.255.224 | 15 |
-| HUANUCO_WIFI_EJECUTIVO | 10.192.52.97 | 10.192.52.179 | 10.192.52.100 | 255.255.255.240 | 8 |
-| HUANUCO_MARKETING | 10.192.52.113 | 10.192.52.179 | 10.192.52.116 | 255.255.255.240 | 8 |
-| HUANUCO_LOGISTICA | 10.192.52.129 | 10.192.52.179 | 10.192.52.132 | 255.255.255.240 | 8 |
-| HUANUCO_WIFI_CLIENTES | 10.192.52.145 | 10.192.52.179 | 10.192.52.148 | 255.255.255.240 | 8 |
+| HUANUCO_WIFI_EJECUTIVO | 10.192.52.97 | 10.192.42.163 | 10.192.52.100 | 255.255.255.240 | 8 |
+| HUANUCO_WIFI_CLIENTES | 10.192.52.145 | 10.192.42.163 | 10.192.52.148 | 255.255.255.240 | 8 |
 
 ## FTP
 
